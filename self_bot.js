@@ -28,20 +28,20 @@ client.on('ready', () => {
         const options = { timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit', hour12: false };
         const timeInThailand = now.toLocaleTimeString('en-US', options); 
 
-    
         const randomGif = gifs[Math.floor(Math.random() * gifs.length)]; 
         const currentMessage = messages[currentIndex]; 
         
-        
+        // Update the bot's presence with streaming activity
         await client.user.setActivity(`${currentMessage} ${timeInThailand}`, { 
             type: 'STREAMING', 
-            url: randomGif 
+            url: "https://www.youtube.com/watch?v=pV2KIUxBzPE"  // Use the correct URL here
         });
 
-        // เปลี่ยนข้อความไปเรื่อย ๆ
+        // Cycle through messages
         currentIndex = (currentIndex + 1) % messages.length;
-    }, 3000); // เปลี่ยนทุก 3 วินาที
+    }, 3000); // Update every 3 seconds
 });
+
 
 
 
