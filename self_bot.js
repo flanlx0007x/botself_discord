@@ -54,7 +54,7 @@ function splitMessageByEntries(entries, chunkSize = 5) {
 }
 
 client.on('messageCreate', async (message) => {
-    if (message.channel.type === 'DM' && message.author.id === '712957914087686164') {
+    if (message.channel.type === 'DM' && message.author.id === '1284791338432331860') {
         if (message.content === '!check') {
             let roomData = {};
             if (fs.existsSync(roomDataPath)) {
